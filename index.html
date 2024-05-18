@@ -2,23 +2,23 @@
 <html>
 
     <head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
+        <script async defer src="https://apis.google.com/js/api.js" onload="handleClientLoad()"></script>
         <script lang="text/javascript">
+            function handleClientLoad() {
+            const apiKey = "AIzaSyCyHjfj22hZmdYXQNwgEnn7MV35u3sFkTU"
 
-            console.log('hi');
-            window.onload = function() { init() };
-
-            var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1EaM-OuxNhugABHVb4UBBYsYxHRpOymgBq_-W1tZa8Yo/edit#gid=0';
-
-            function init() {
-            Tabletop.init( { key: public_spreadsheet_url,
-                            callback: showInfo,
-                            simpleSheet: true } )
-            }
-
-            function showInfo(data, tabletop) {
-            alert("Successfully processed!")
-            console.log(data);
+            gapi.load('client', () => {
+                gapi.client.setApiKey(apiKey);
+                gapi.client.load('sheets', 'v4', () => {
+                gapi.client.sheets.spreadsheets.values.get({
+                    spreadsheetId: "1EaM-OuxNhugABHVb4UBBYsYxHRpOymgBq_-W1tZa8Yo",
+                    range: 'Sheet1!A3',
+                }).then(res => {
+                    const value = res.result.values[0][0];
+                    console.log(value);
+                });
+                });
+            });
             }
 
         </script>
