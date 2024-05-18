@@ -22,6 +22,7 @@
                     let bod = document.querySelector('.images-man');
                     console.log(bod);
                     for (let i = 0; i < res.result.values.length; i++) {
+                        console.log(res.result.values[i])
                         if (res.result.values[i][2]) {
                             let img = document.createElement("img").src = res.result[i][2];
                             console.log(img)
