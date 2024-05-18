@@ -5,10 +5,11 @@
         <script async defer src="https://apis.google.com/js/api.js" onload="handleClientLoad()"></script>
         <script lang="text/javascript">
             function handleClientLoad() {
-            const apiKey = "AIzaSyCyHjfj22hZmdYXQNwgEnn7MV35u3sFkTU"
+            const apiKey = process.env.API_KEY
 
             gapi.load('client', () => {
                 gapi.client.setApiKey(apiKey);
+                console.log('happening')
                 gapi.client.load('sheets', 'v4', () => {
                 gapi.client.sheets.spreadsheets.values.get({
                     spreadsheetId: "1EaM-OuxNhugABHVb4UBBYsYxHRpOymgBq_-W1tZa8Yo",
