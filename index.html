@@ -13,11 +13,10 @@
                 gapi.client.load('sheets', 'v4', () => {
                 gapi.client.sheets.spreadsheets.values.get({
                     spreadsheetId: "1EaM-OuxNhugABHVb4UBBYsYxHRpOymgBq_-W1tZa8Yo",
-                    range: 'Sheet1!A3',
+                    range: 'Sheet1',
                 }).then(res => {
                     console.log(res.result)
                     const value = res.result.values[0][0];
-                    console.log(value);
                 });
                 });
             });
