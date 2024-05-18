@@ -1,5 +1,27 @@
 <!DOCTYPE html>
 <html>
+
+    <head>
+        <script lang="text/javascript">
+
+            console.log('hi');
+            window.onload = function() { init() };
+
+            var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1EaM-OuxNhugABHVb4UBBYsYxHRpOymgBq_-W1tZa8Yo/edit#gid=0';
+
+            function init() {
+            Tabletop.init( { key: public_spreadsheet_url,
+                            callback: showInfo,
+                            simpleSheet: true } )
+            }
+
+            function showInfo(data, tabletop) {
+            alert("Successfully processed!")
+            console.log(data);
+            }
+
+        </script>
+    </head> 
 <body>
 
 <h1>Anna and Rachael make a zine</h1>
