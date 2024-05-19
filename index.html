@@ -112,11 +112,14 @@
                 width: 100%;
             }
 
-            @media (max-width: 900px) {
-                        .image-wrapper {
-                            width: 80%;
-                        }
-                   }
+            @media screen 
+                and (max-device-width: 900px) 
+                and (min-device-width: 20px) 
+                { 
+                    .image-wrapper {
+                        width: 100%;
+                    }
+                }
             span {
                 font-size: 90px;
                 margin: 20px;
