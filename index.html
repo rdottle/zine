@@ -2,6 +2,10 @@
 <html>
 
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+
         <script async defer src="https://apis.google.com/js/api.js" onload="handleClientLoad()"></script>
         <script lang="text/javascript">
             function handleClientLoad() {
@@ -43,12 +47,16 @@
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
+                font-family: "Reenie Beanie", cursive;
+                font-weight: 400;
+                font-style: normal;
             }
             .images-man {
                 width: 100vw;
                 height: auto;
                 position: relative;
                 img {
+                    position: absolute;
                     width: 50%;
                     margin: 0 auto;
                     border-radius: 50%;
@@ -68,7 +76,10 @@
     </head> 
 <body>
 
-<h1>Anna and Rachael make a zine</h1>
+<div class="names">
+<h1>a zine<h1>
+<h3>by anna + rachael </h3>
+</div>
     <div class="images-man"></div>
 </body>
 </html>
